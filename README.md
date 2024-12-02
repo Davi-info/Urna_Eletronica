@@ -1,6 +1,7 @@
-## Getting Started
+## Urna_Eletronica
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto busca realizar uma implementação, para fins de estudo, de uma
+modelo de urna eletrônica eleitoral.
 
 ## Folder Structure
 
