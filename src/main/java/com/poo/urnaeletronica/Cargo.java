@@ -11,7 +11,7 @@ public class Cargo {
         this.numeroVagas = numeroVagas;
     }
 
-    // Getters e Setters
+    // Getters
     public String getNome() {
         return nome;
     }

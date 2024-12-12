@@ -15,7 +15,7 @@ public class Candidato {
         this.partido = partido;
     }
 
-    // Getters e Setters
+    // Getters
     public int getId() {
         return id;
     }
