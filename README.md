@@ -13,3 +13,5 @@ Projeto apresentado para a disciplina de POO
 
 [IsaquePFerreira](https://github.com/IsaquePFerreira)
 
+[FernandosenaDev](https://github.com/FernandosenaDev)
+
