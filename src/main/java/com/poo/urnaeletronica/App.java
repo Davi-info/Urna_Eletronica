@@ -5,7 +5,6 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        // Criar uma eleição
         Eleicao eleicao = new Eleicao(1, "Eleição 2024");
         Cargo presidente = new Cargo("Presidente", 1);
         Candidato candidato1 = new Candidato(1, "Candidato Bob Esponja", presidente, "Partido Esponjas");
@@ -28,12 +27,12 @@ public class App {
             mensagem.append("Digite -1 para sair.");
 
             // Exibir popup para escolha
-            String escolhaStr = JOptionPane.showInputDialog(null, mensagem.toString(), 
+            String escolhaStr = JOptionPane.showInputDialog(null, mensagem.toString(),
                     "Votação", JOptionPane.INFORMATION_MESSAGE);
 
             // Verificar se o usuário cancelou ou digitou -1
             if (escolhaStr == null || escolhaStr.equals("-1")) {
-                JOptionPane.showMessageDialog(null, "Votação encerrada.", "Encerrado", 
+                JOptionPane.showMessageDialog(null, "Votação encerrada.", "Encerrado",
                         JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
