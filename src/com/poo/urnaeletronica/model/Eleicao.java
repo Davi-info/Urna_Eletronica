@@ -1,4 +1,4 @@
-package com.poo.urnaeletronica;
+package com.poo.urnaeletronica.model;
 
 import java.util.ArrayList;
 import java.util.List;

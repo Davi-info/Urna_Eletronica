@@ -1,4 +1,4 @@
-package com.poo.urnaeletronica;
+package com.poo.urnaeletronica.model;
 
 // Representa um cargo político
 public class Cargo {

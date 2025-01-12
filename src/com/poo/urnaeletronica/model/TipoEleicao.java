@@ -1,4 +1,4 @@
-package com.poo.urnaeletronica;
+package com.poo.urnaeletronica.model;
 
 // Representa o tipo de uma eleição (ex: presidencial, municipal)
 public class TipoEleicao {

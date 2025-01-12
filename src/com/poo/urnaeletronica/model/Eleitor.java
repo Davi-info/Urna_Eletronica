@@ -1,4 +1,4 @@
-package com.poo.urnaeletronica;
+package com.poo.urnaeletronica.model;
 
 // Representa um eleitor na eleição
 public class Eleitor {
