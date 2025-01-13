@@ -26,6 +26,6 @@ public class Eleicao {
         this.tipo = tipo;
     }
 
-    
-
+    // Método para cadastrar candidato
+        
 }

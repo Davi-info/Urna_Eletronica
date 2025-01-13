@@ -9,5 +9,21 @@ public class Cargo {
         this.nomeCargo = nomeCargo;
         this.numeroVagas = numeroVagas;
     }
-    
+
+
+    public String getNomeCargo() {
+        return nomeCargo;
+    }
+
+    public void setNomeCargo(String nomeCargo) {
+        this.nomeCargo = nomeCargo;
+    }
+
+    public int getNumeroVagas() {
+        return numeroVagas;
+    }
+
+    public void setNumeroVagas(int numeroVagas) {
+        this.numeroVagas = numeroVagas;
+    }
 }

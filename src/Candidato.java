@@ -14,5 +14,38 @@ public class Candidato {
         this.partido = partido;
     }
 
+    public int getIdCandidato() {
+        return idCandidato;
+    }
+
+    public void setIdCandidato(int idCandidato) {
+        this.idCandidato = idCandidato;
+    }
+
+    public String getNomeDoCandidato() {
+        return nomeDoCandidato;
+    }
+
+    public void setNomeDoCandidato(String nomeDoCandidato) {
+        this.nomeDoCandidato = nomeDoCandidato;
+    }
+
+    public Cargo getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
+
+    public String getPartido() {
+        return partido;
+    }
+
+    public void setPartido(String partido) {
+        this.partido = partido;
+    }
+
+    
     
 }
