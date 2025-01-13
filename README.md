@@ -1,19 +1,17 @@
 ## Urna_Eletronica
 
-Este projeto busca realizar uma implementação, para fins de estudo, de uma
-modelo de urna eletrônica eleitoral.
+Projeto apresentado para a disciplina de POO
 
-## Folder Structure
+## Autores
+[Davi-info](https://github.com/Davi-info)
 
-The workspace contains two folders by default, where:
+[Gabriel-Neo97](https://github.com/Gabriel-Neo97)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+[Wal-dreamer](https://github.com/Wal-dreamer)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+[Maria-Alves-Santos](https://github.com/Maria-Alves-Santos)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+[IsaquePFerreira](https://github.com/IsaquePFerreira)
 
-## Dependency Management
+[FernandosenaDev](https://github.com/FernandosenaDev)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
