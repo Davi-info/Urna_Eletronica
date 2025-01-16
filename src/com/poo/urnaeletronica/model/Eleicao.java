@@ -58,7 +58,7 @@ public class Eleicao {
     public void listarCandidatos() {
         System.out.println("Candidatos disponíveis:");
         for (Candidato c : candidatos) {
-            System.out.println("ID: " + c.getId() + " - Nome: " + c.getNome() + " - Partido: " + c.getPartido());
+            System.out.println("ID: " + c.getId() + " - Nome: " + c.getNome()  + " - Partido: " + c.getPartido());
         }
 
     } // Método para listar os eleitores

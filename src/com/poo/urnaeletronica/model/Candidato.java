@@ -4,13 +4,13 @@ package com.poo.urnaeletronica.model;
 public class Candidato {
     private int id;
     private String nome;
-    private Cargo cargo;
+//    private Cargo cargo;
     private String partido;
 
-    public Candidato(int id, String nome, Cargo cargo, String partido) {
+    public Candidato(int id, String nome, String partido) {
         this.id = id;
         this.nome = nome;
-        this.cargo = cargo;
+//        this.cargo = cargo;
         this.partido = partido;
     }
 
@@ -23,9 +23,9 @@ public class Candidato {
         return nome;
     }
 
-    public Cargo getCargo() {
-        return cargo;
-    }
+//    public Cargo getCargo() {
+//        return cargo;
+//    }
 
     public String getPartido() {
         return partido;
@@ -40,9 +40,9 @@ public class Candidato {
         return this.nome = nome; 
     }
 
-    public Cargo setCargo(Cargo cargo) {
-        return this.cargo = cargo; 
-    }
+//    public Cargo setCargo(Cargo cargo) {
+//        return this.cargo = cargo;
+//    }
 
     public String setPartido(String partido) {
         return this.partido = partido; 
