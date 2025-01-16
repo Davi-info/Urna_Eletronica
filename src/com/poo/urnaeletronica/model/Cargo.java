@@ -19,4 +19,13 @@ public class Cargo {
     public int getNumeroVagas() {
         return numeroVagas;
     }
+
+    // Setters
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setNumeroVagas(int numeroVagas) {
+        this.numeroVagas = numeroVagas;
+    }
 }

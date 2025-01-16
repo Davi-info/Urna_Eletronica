@@ -1,5 +1,7 @@
 package com.poo.urnaeletronica.model;
 
+import com.poo.urnaeletronica.enums.TipoVoto;
+
 // Representa um voto realizado por um eleitor
 public class Voto {
     private TipoVoto tipo;
@@ -19,11 +21,17 @@ public class Voto {
     public Candidato getCandidato() {
         return candidato;
     }
+
+    // Setters
+    public void setTipo(TipoVoto tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setCandidato(Candidato candidato) {
+        this.candidato = candidato;
+    }
+
 }
 
-// Enum para os tipos de voto
-enum TipoVoto {
-    VOTO_VALIDO, VOTO_BRANCO, VOTO_NULO
-}
 
 
