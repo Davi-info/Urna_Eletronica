@@ -7,7 +7,6 @@ public class Candidato {
     private Cargo cargo;
     private String partido;
 
-    // Construtor
     public Candidato(int id, String nome, Cargo cargo, String partido) {
         this.id = id;
         this.nome = nome;
@@ -31,6 +30,24 @@ public class Candidato {
     public String getPartido() {
         return partido;
     }
+
+    // Setters
+    public int setId(int id) {
+        return this.id = id; 
+    }
+
+    public String setNome(String nome) {
+        return this.nome = nome; 
+    }
+
+    public Cargo setCargo(Cargo cargo) {
+        return this.cargo = cargo; 
+    }
+
+    public String setPartido(String partido) {
+        return this.partido = partido; 
+    }
 }
+
 
 
