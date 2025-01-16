@@ -1,2 +1,6 @@
 bin
+out
 *.class
+.idea
+.vscode
+*.iml
