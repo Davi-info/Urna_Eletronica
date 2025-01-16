@@ -13,7 +13,7 @@ public class CandidatoController {
         this.candidatoView = candidatoView;
     }
 
-    public void pegaDados() {
+    public void cadastrarCandidato() {
         do {
             int id = candidatoView.inputNumero();
             String nome = candidatoView.inputNome();
@@ -26,12 +26,10 @@ public class CandidatoController {
         } while (candidatoView.continuaCadastrando());
     }
 
-    public void mostraTodasAsInformacoesCandidatos() {
+    public void listarCandidatos() {
         System.out.println("\nMostrando todas as informações dos candidatos: ");
         for (Candidato candidato : candidatos) {
             CandidatoView.mostraInformacaoCandidato(candidato);
         }
     }
-
-
 }

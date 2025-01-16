@@ -20,7 +20,7 @@ public class App {
 
         CandidatoController candidatoController = new CandidatoController(candidatoView);
 
-        candidatoController.pegaDados();
-        candidatoController.mostraTodasAsInformacoesCandidatos();
+        candidatoController.cadastrarCandidato();
+        candidatoController.listarCandidatos();
     }
 }
