@@ -28,4 +28,9 @@ public class Cargo {
     public void setNumeroVagas(int numeroVagas) {
         this.numeroVagas = numeroVagas;
     }
+
+    @Override
+    public String toString() {
+        return "nome='" + nome + ", número vagas=" + numeroVagas + "'";
+    }
 }
