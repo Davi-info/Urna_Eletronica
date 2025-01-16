@@ -38,34 +38,11 @@ public class Eleicao {
 		this.id = id;
 	}
 
-	public void cadastrarCandidato(Candidato c) {
-        candidatos.add(c);
-    }
-
     public ArrayList<Candidato> getCandidatos() {
         return candidatos;
     }
 
-	public void cadastrarEleitor(Eleitor e) {
-        eleitores.add(e);
-    }
-
     public ArrayList<Eleitor> getEleitores() {
         return eleitores;
-    }
-
-    // Método para listar os candidatos
-    public void listarCandidatos() {
-        System.out.println("Candidatos disponíveis:");
-        for (Candidato c : candidatos) {
-            System.out.println("ID: " + c.getId() + " - Nome: " + c.getNome()  + " - Partido: " + c.getPartido());
-        }
-
-    } // Método para listar os eleitores
-    public void listarEleitores() {
-        System.out.println("Eleitores cadastrados");
-        for (Eleitor e : eleitores) {
-            System.out.println(" Nome: " + e.getNome());
-        }
     }
 }
