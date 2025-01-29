@@ -1,8 +1,8 @@
 package com.poo.urnaeletronica.model;
 
-import com.poo.urnaeletronica.enums.TipoEleicao;
-
 import java.util.ArrayList;
+
+import com.poo.urnaeletronica.enums.TipoEleicao;
 
 public class Eleicao {
     private int id;
