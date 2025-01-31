@@ -8,8 +8,9 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 
-public class CadastrarEleitor {
+public class CadastrarEleicao {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -20,7 +21,7 @@ public class CadastrarEleitor {
 	/**
 	 * Create the application.
 	 */
-	public CadastrarEleitor() {
+	public CadastrarEleicao() {
 		initialize();
 	}
 
@@ -33,25 +34,37 @@ public class CadastrarEleitor {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBackground(Color.WHITE);
+		comboBox_1.setBounds(570, 252, 404, 34);
+		frame.getContentPane().add(comboBox_1);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBackground(Color.WHITE);
+		comboBox.setBounds(570, 166, 404, 34);
+		frame.getContentPane().add(comboBox);
+		
+		JLabel lblNewLabel_2_1_2 = new JLabel("Lista de Eleitores");
+		lblNewLabel_2_1_2.setForeground(Color.WHITE);
+		lblNewLabel_2_1_2.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel_2_1_2.setBounds(570, 211, 161, 40);
+		frame.getContentPane().add(lblNewLabel_2_1_2);
+		
+		JLabel lblNewLabel_2_2 = new JLabel("Lista de Candidatos");
+		lblNewLabel_2_2.setForeground(Color.WHITE);
+		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel_2_2.setBounds(570, 115, 190, 40);
+		frame.getContentPane().add(lblNewLabel_2_2);
+		
 		JButton btnNewButton_1_1_1_1_1_1 = new JButton("Sair");
 		btnNewButton_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1_1_1_1_1_1.setBounds(806, 492, 94, 34);
+		btnNewButton_1_1_1_1_1_1.setBounds(738, 492, 94, 34);
 		frame.getContentPane().add(btnNewButton_1_1_1_1_1_1);
 		
 		JButton btnNewButton_1_1_1_1_1 = new JButton("Voltar");
 		btnNewButton_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1_1_1_1_1.setBounds(694, 492, 102, 34);
+		btnNewButton_1_1_1_1_1.setBounds(607, 492, 102, 34);
 		frame.getContentPane().add(btnNewButton_1_1_1_1_1);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 255, 255));
-		panel_1.setBounds(694, 166, 205, 251);
-		frame.getContentPane().add(panel_1);
-		
-		JButton btnNewButton_1_1_1_1 = new JButton("Procurar");
-		btnNewButton_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1_1_1_1.setBounds(435, 492, 102, 34);
-		frame.getContentPane().add(btnNewButton_1_1_1_1);
 		
 		JButton btnNewButton_1_1_1 = new JButton("Visualizar");
 		btnNewButton_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -78,13 +91,13 @@ public class CadastrarEleitor {
 		textField_3.setBounds(173, 444, 364, 34);
 		frame.getContentPane().add(textField_3);
 		
-		JLabel lblNewLabel_2_1_1_1 = new JLabel("Foto");
+		JLabel lblNewLabel_2_1_1_1 = new JLabel("Tipo de Eleição");
 		lblNewLabel_2_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_2_1_1_1.setBounds(173, 393, 161, 40);
 		frame.getContentPane().add(lblNewLabel_2_1_1_1);
 		
-		JLabel lblNewLabel_2_1_1 = new JLabel("Data do Voto");
+		JLabel lblNewLabel_2_1_1 = new JLabel("Data do Fim");
 		lblNewLabel_2_1_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_2_1_1.setBounds(173, 297, 161, 40);
@@ -95,7 +108,7 @@ public class CadastrarEleitor {
 		textField_2.setBounds(173, 348, 364, 34);
 		frame.getContentPane().add(textField_2);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Voto");
+		JLabel lblNewLabel_2_1 = new JLabel("Data do Início");
 		lblNewLabel_2_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_2_1.setBounds(173, 211, 161, 40);
@@ -111,7 +124,7 @@ public class CadastrarEleitor {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Nome do Eleitor");
+		JLabel lblNewLabel_2 = new JLabel("Nome");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setBounds(173, 115, 161, 40);
@@ -122,7 +135,7 @@ public class CadastrarEleitor {
 		panel.setBounds(0, 0, 1009, 92);
 		frame.getContentPane().add(panel);
 		
-		JLabel lblNewLabel_1 = new JLabel("CADASTRO DO ELEITOR");
+		JLabel lblNewLabel_1 = new JLabel("CADASTRO DA ELEIÇÃO");
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 50));
 		panel.add(lblNewLabel_1);

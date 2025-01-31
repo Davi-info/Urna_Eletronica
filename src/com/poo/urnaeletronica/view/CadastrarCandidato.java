@@ -9,7 +9,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class CadastrarEleitor {
+public class CadastrarCandidato {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -20,7 +20,7 @@ public class CadastrarEleitor {
 	/**
 	 * Create the application.
 	 */
-	public CadastrarEleitor() {
+	public CadastrarCandidato() {
 		initialize();
 	}
 
@@ -84,7 +84,7 @@ public class CadastrarEleitor {
 		lblNewLabel_2_1_1_1.setBounds(173, 393, 161, 40);
 		frame.getContentPane().add(lblNewLabel_2_1_1_1);
 		
-		JLabel lblNewLabel_2_1_1 = new JLabel("Data do Voto");
+		JLabel lblNewLabel_2_1_1 = new JLabel("Partido");
 		lblNewLabel_2_1_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_2_1_1.setBounds(173, 297, 161, 40);
@@ -95,7 +95,7 @@ public class CadastrarEleitor {
 		textField_2.setBounds(173, 348, 364, 34);
 		frame.getContentPane().add(textField_2);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Voto");
+		JLabel lblNewLabel_2_1 = new JLabel("Cargo");
 		lblNewLabel_2_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_2_1.setBounds(173, 211, 161, 40);
@@ -111,10 +111,10 @@ public class CadastrarEleitor {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Nome do Eleitor");
+		JLabel lblNewLabel_2 = new JLabel("Nome do Candidato");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
-		lblNewLabel_2.setBounds(173, 115, 161, 40);
+		lblNewLabel_2.setBounds(173, 115, 188, 40);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JPanel panel = new JPanel();
@@ -122,17 +122,17 @@ public class CadastrarEleitor {
 		panel.setBounds(0, 0, 1009, 92);
 		frame.getContentPane().add(panel);
 		
-		JLabel lblNewLabel_1 = new JLabel("CADASTRO DO ELEITOR");
+		JLabel lblNewLabel_1 = new JLabel("CADASTRO DO CANDIDATO");
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 50));
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(0, -11, 1009, 558);
+		lblNewLabel.setBounds(0, 0, 1009, 547);
 		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("TelaMenu.png")));
 		frame.getContentPane().add(lblNewLabel);
 	}
-
+	
 	public void start() {
 		frame.setVisible(true);
 	}
