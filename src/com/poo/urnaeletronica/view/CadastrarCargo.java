@@ -96,7 +96,7 @@ public class CadastrarCargo {
                 Cargo cargo = cargoController.buscarCargo(nome);
 
                 if (cargo != null) {
-                    vagasField.setText(String.valueOf(cargo.getNumeroDeVagas()));
+                    vagasField.setText(String.valueOf(cargo.getNumeroVagas()));
                     JOptionPane.showMessageDialog(frame, "Cargo encontrado: " + cargo);
                 } else {
                     JOptionPane.showMessageDialog(frame, "Cargo não encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
