@@ -5,6 +5,7 @@ package com.poo.urnaeletronica;
 
 // import com.poo.urnaeletronica.view.CadastrarEleitor;
 import com.poo.urnaeletronica.view.CadastrarCandidato;
+import com.poo.urnaeletronica.view.LoginView;
 // import com.poo.urnaeletronica.view.Login;
 import com.poo.urnaeletronica.view.Menu;
 import com.poo.urnaeletronica.view.UrnaEletronica;
@@ -17,8 +18,11 @@ public class App {
     public static void main(String[] args) throws Exception {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Menu menu = new Menu();
-                menu.start();
+
+                new LoginView().start();
+
+                //Menu menu = new Menu();
+                //menu.start();
                
                 // new Login().setVisible(true);
                
