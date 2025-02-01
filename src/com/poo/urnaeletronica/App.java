@@ -48,5 +48,5 @@ public class App {
                 // visualizarEleicao.start();
             }
         });
-    }
+   }
 }
