@@ -65,7 +65,7 @@ public class LoginView {
 
         frame.setVisible(true);
     }
-git commit
+
     private void abrirMenuPrincipal() {
         Menu menu = new Menu();
         menu.start();
