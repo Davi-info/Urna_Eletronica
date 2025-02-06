@@ -1,14 +1,14 @@
 package com.poo.urnaeletronica.view;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class CadastrarEleicao {
 
@@ -44,75 +44,75 @@ public class CadastrarEleicao {
 		comboBox.setBounds(570, 166, 404, 34);
 		frame.getContentPane().add(comboBox);
 		
-		JLabel lblNewLabel_2_1_2 = new JLabel("Lista de Eleitores");
-		lblNewLabel_2_1_2.setForeground(Color.WHITE);
-		lblNewLabel_2_1_2.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_2_1_2.setBounds(570, 211, 161, 40);
-		frame.getContentPane().add(lblNewLabel_2_1_2);
+		JLabel lblListadeEleitores = new JLabel("Lista de Eleitores");
+		lblListadeEleitores.setForeground(Color.WHITE);
+		lblListadeEleitores.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblListadeEleitores.setBounds(570, 211, 161, 40);
+		frame.getContentPane().add(lblListadeEleitores);
 		
-		JLabel lblNewLabel_2_2 = new JLabel("Lista de Candidatos");
-		lblNewLabel_2_2.setForeground(Color.WHITE);
-		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_2_2.setBounds(570, 115, 190, 40);
-		frame.getContentPane().add(lblNewLabel_2_2);
+		JLabel lblListadeCandidatos = new JLabel("Lista de Candidatos");
+		lblListadeCandidatos.setForeground(Color.WHITE);
+		lblListadeCandidatos.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblListadeCandidatos.setBounds(570, 115, 190, 40);
+		frame.getContentPane().add(lblListadeCandidatos);
 		
-		JButton btnNewButton_1_1_1_1_1_1 = new JButton("Sair");
-		btnNewButton_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1_1_1_1_1_1.setBounds(738, 492, 94, 34);
-		frame.getContentPane().add(btnNewButton_1_1_1_1_1_1);
+		JButton btnSair = new JButton("Sair");
+		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnSair.setBounds(738, 492, 94, 34);
+		frame.getContentPane().add(btnSair);
 		
-		JButton btnNewButton_1_1_1_1_1 = new JButton("Voltar");
-		btnNewButton_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1_1_1_1_1.setBounds(607, 492, 102, 34);
-		frame.getContentPane().add(btnNewButton_1_1_1_1_1);
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnVoltar.setBounds(607, 492, 102, 34);
+		frame.getContentPane().add(btnVoltar);
 		
-		JButton btnNewButton_1_1_1 = new JButton("Visualizar");
-		btnNewButton_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1_1_1.setBounds(28, 444, 102, 34);
-		frame.getContentPane().add(btnNewButton_1_1_1);
+		JButton btnVisualizar = new JButton("Visualizar");
+		btnVisualizar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnVisualizar.setBounds(28, 444, 102, 34);
+		frame.getContentPane().add(btnVisualizar);
 		
-		JButton btnNewButton_1_1 = new JButton("Excluir");
-		btnNewButton_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_1_1.setBounds(28, 348, 102, 34);
-		frame.getContentPane().add(btnNewButton_1_1);
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnExcluir.setBounds(28, 348, 102, 34);
+		frame.getContentPane().add(btnExcluir);
 		
 		JButton btnBusca = new JButton("Buscar");
 		btnBusca.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnBusca.setBounds(28, 252, 102, 34);
 		frame.getContentPane().add(btnBusca);
 		
-		JButton btnNewButton = new JButton("Salvar");
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton.setBounds(28, 166, 102, 34);
-		frame.getContentPane().add(btnNewButton);
+		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnSalvar.setBounds(28, 166, 102, 34);
+		frame.getContentPane().add(btnSalvar);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
 		textField_3.setBounds(173, 444, 364, 34);
 		frame.getContentPane().add(textField_3);
 		
-		JLabel lblNewLabel_2_1_1_1 = new JLabel("Tipo de Eleição");
-		lblNewLabel_2_1_1_1.setForeground(Color.WHITE);
-		lblNewLabel_2_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_2_1_1_1.setBounds(173, 393, 161, 40);
-		frame.getContentPane().add(lblNewLabel_2_1_1_1);
+		JLabel lblTipodeEleição = new JLabel("Tipo de Eleição");
+		lblTipodeEleição.setForeground(Color.WHITE);
+		lblTipodeEleição.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblTipodeEleição.setBounds(173, 393, 161, 40);
+		frame.getContentPane().add(lblTipodeEleição);
 		
-		JLabel lblNewLabel_2_1_1 = new JLabel("Data do Fim");
-		lblNewLabel_2_1_1.setForeground(Color.WHITE);
-		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_2_1_1.setBounds(173, 297, 161, 40);
-		frame.getContentPane().add(lblNewLabel_2_1_1);
+		JLabel lblDatadoFim = new JLabel("Data do Fim");
+		lblDatadoFim.setForeground(Color.WHITE);
+		lblDatadoFim.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblDatadoFim.setBounds(173, 297, 161, 40);
+		frame.getContentPane().add(lblDatadoFim);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(173, 348, 364, 34);
 		frame.getContentPane().add(textField_2);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Data do Início");
-		lblNewLabel_2_1.setForeground(Color.WHITE);
-		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_2_1.setBounds(173, 211, 161, 40);
-		frame.getContentPane().add(lblNewLabel_2_1);
+		JLabel lblDatadoInício = new JLabel("Data do Início");
+		lblDatadoInício.setForeground(Color.WHITE);
+		lblDatadoInício.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblDatadoInício.setBounds(173, 211, 161, 40);
+		frame.getContentPane().add(lblDatadoInício);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
@@ -124,21 +124,21 @@ public class CadastrarEleicao {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Nome");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_2.setForeground(new Color(255, 255, 255));
-		lblNewLabel_2.setBounds(173, 115, 161, 40);
-		frame.getContentPane().add(lblNewLabel_2);
+		JLabel lblNome = new JLabel("Nome");
+		lblNome.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNome.setForeground(new Color(255, 255, 255));
+		lblNome.setBounds(173, 115, 161, 40);
+		frame.getContentPane().add(lblNome);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(0, 0, 128));
 		panel.setBounds(0, 0, 1009, 92);
 		frame.getContentPane().add(panel);
 		
-		JLabel lblNewLabel_1 = new JLabel("CADASTRO DA ELEIÇÃO");
-		lblNewLabel_1.setForeground(new Color(255, 255, 255));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 50));
-		panel.add(lblNewLabel_1);
+		JLabel lblTitulo = new JLabel("CADASTRO DA ELEIÇÃO");
+		lblTitulo.setForeground(new Color(255, 255, 255));
+		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 50));
+		panel.add(lblTitulo);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(0, -11, 1009, 558);

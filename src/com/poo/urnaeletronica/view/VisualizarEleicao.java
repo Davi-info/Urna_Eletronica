@@ -1,16 +1,16 @@
 package com.poo.urnaeletronica.view;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JScrollPane;
-import java.awt.Dimension;
 
 public class VisualizarEleicao {
 
@@ -63,25 +63,25 @@ public class VisualizarEleicao {
 		scrollPane.setBounds(118, 148, 753, 45);
 		frame.getContentPane().add(scrollPane);
 		
-		JButton btnNewButton_1_1_1_1_1_1 = new JButton("Sair");
-		btnNewButton_1_1_1_1_1_1.setBounds(806, 492, 94, 34);
-		btnNewButton_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		frame.getContentPane().add(btnNewButton_1_1_1_1_1_1);
+		JButton btnSair = new JButton("Sair");
+		btnSair.setBounds(806, 492, 94, 34);
+		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
+		frame.getContentPane().add(btnSair);
 		
-		JButton btnNewButton_1_1_1_1_1 = new JButton("Voltar");
-		btnNewButton_1_1_1_1_1.setBounds(694, 492, 102, 34);
-		btnNewButton_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		frame.getContentPane().add(btnNewButton_1_1_1_1_1);
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(694, 492, 102, 34);
+		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		frame.getContentPane().add(btnVoltar);
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 1009, 92);
 		panel.setBackground(new Color(0, 0, 128));
 		frame.getContentPane().add(panel);
 		
-		JLabel lblNewLabel_1 = new JLabel("ELEIÇÕES CADASTRADAS");
-		lblNewLabel_1.setForeground(new Color(255, 255, 255));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 50));
-		panel.add(lblNewLabel_1);
+		JLabel lblEleicoesCadastradas = new JLabel("ELEIÇÕES CADASTRADAS");
+		lblEleicoesCadastradas.setForeground(new Color(255, 255, 255));
+		lblEleicoesCadastradas.setFont(new Font("Tahoma", Font.BOLD, 50));
+		panel.add(lblEleicoesCadastradas);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(-16, -10, 1025, 547);
