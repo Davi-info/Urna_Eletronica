@@ -3,6 +3,9 @@ package com.poo.urnaeletronica.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,9 +15,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class VisualizarEleitor {
+public class VisualizarEleitor extends JFrame {
 
-	private JFrame frame;
+	//private JFrame frame;
 	private JTable table;
 
 	/**
@@ -28,10 +31,10 @@ public class VisualizarEleitor {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1025, 576);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		setTitle("Cadastrar Eleitor");
+		setBounds(100, 100, 1025, 576);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		getContentPane().setLayout(null);
 		
 		table = new JTable();
 		table.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -61,22 +64,31 @@ public class VisualizarEleitor {
 		// Criando o JScrollPane e adicionando a tabela nele
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(118, 148, 753, 45);
-		frame.getContentPane().add(scrollPane);
+		getContentPane().add(scrollPane);
 		
 		JButton btnSair = new JButton("Sair");
 		btnSair.setBounds(806, 492, 94, 34);
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
-		frame.getContentPane().add(btnSair);
+		getContentPane().add(btnSair);
+		btnSair.addActionListener(e -> System.exit(0));
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setBounds(694, 492, 102, 34);
 		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		frame.getContentPane().add(btnVoltar);
+		getContentPane().add(btnVoltar);
+		
+		btnVoltar.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        dispose(); // Fecha a janela atual
+		        CadastrarEleitor cadastrarEleitor = new CadastrarEleitor(); // Cria uma instância da tela anterior
+		        cadastrarEleitor.setVisible(false); // Exibe a tela anterior
+		    }
+		});
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 1009, 92);
 		panel.setBackground(new Color(0, 0, 128));
-		frame.getContentPane().add(panel);
+		getContentPane().add(panel);
 		
 		JLabel lblEleitoresCadastrados = new JLabel("ELEITORES CADASTRADOS");
 		lblEleitoresCadastrados.setForeground(new Color(255, 255, 255));
@@ -86,10 +98,10 @@ public class VisualizarEleitor {
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(-16, -10, 1025, 547);
 		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("TelaMenu.png")));
-		frame.getContentPane().add(lblNewLabel);
+		getContentPane().add(lblNewLabel);
 	}
 
 	public void start() {
-		frame.setVisible(true);
+		setVisible(true);
 	}
 }

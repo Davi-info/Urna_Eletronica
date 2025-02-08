@@ -9,7 +9,7 @@ public class App {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
 
-                new LoginView().start();
+                new LoginView();
             }
         });
    }

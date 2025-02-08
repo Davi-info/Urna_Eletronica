@@ -11,9 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-public class UrnaEletronica {
+public class UrnaEletronica extends JFrame {
 
-	private JFrame frame;
+	//private JFrame frame;
 	private JTextField textField;
 
 	/**
@@ -27,15 +27,16 @@ public class UrnaEletronica {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1080, 576);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		//frame = new JFrame();
+		setTitle("Urna Eletronica");
+		setBounds(100, 100, 1080, 576);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.control);
 		panel.setBounds(0, 0, 1064, 537);
-		frame.getContentPane().add(panel);
+		getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
@@ -222,6 +223,6 @@ public class UrnaEletronica {
 	}
 	
 	public void start() {
-		frame.setVisible(true);
+		setVisible(true);
 	}
 }
