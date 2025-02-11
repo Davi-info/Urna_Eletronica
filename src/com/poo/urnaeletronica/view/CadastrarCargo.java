@@ -26,13 +26,13 @@ public class CadastrarCargo extends JFrame {
 
         JButton btnSair = new JButton("Sair");
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnSair.setBounds(806, 492, 94, 34);
+		btnSair.setBounds(443, 444, 94, 34);
 		getContentPane().add(btnSair);
         btnSair.addActionListener(e -> System.exit(0));
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnVoltar.setBounds(694, 492, 102, 34);
+		btnVoltar.setBounds(243, 444, 102, 34);
 		getContentPane().add(btnVoltar);
 		
 		btnVoltar.addActionListener(new ActionListener() {

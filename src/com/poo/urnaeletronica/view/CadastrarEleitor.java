@@ -17,7 +17,6 @@ public class CadastrarEleitor extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
 
 	/**
 	 * Create the application.
@@ -38,13 +37,13 @@ public class CadastrarEleitor extends JFrame {
 		
 		JButton btnSair = new JButton("Sair");
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnSair.setBounds(806, 492, 94, 34);
+		btnSair.setBounds(443, 444, 94, 34);
 		getContentPane().add(btnSair);
 		btnSair.addActionListener(e -> System.exit(0));
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnVoltar.setBounds(694, 492, 102, 34);
+		btnVoltar.setBounds(232, 444, 102, 34);
 		getContentPane().add(btnVoltar);
 		
 		btnVoltar.addActionListener(new ActionListener() {
@@ -60,11 +59,6 @@ public class CadastrarEleitor extends JFrame {
 		panel_1.setBackground(new Color(255, 255, 255));
 		panel_1.setBounds(694, 166, 205, 251);
 		getContentPane().add(panel_1);
-		
-		JButton btnProcurar = new JButton("Procurar");
-		btnProcurar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnProcurar.setBounds(435, 492, 102, 34);
-		getContentPane().add(btnProcurar);
 		
 		JButton btnVisualizarEleitor = new JButton("Visualizar");
 		btnVisualizarEleitor.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -92,17 +86,6 @@ public class CadastrarEleitor extends JFrame {
 		btnSalvar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnSalvar.setBounds(28, 166, 102, 34);
 		getContentPane().add(btnSalvar);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(173, 444, 364, 34);
-		getContentPane().add(textField_3);
-		
-		JLabel lblFoto = new JLabel("Foto");
-		lblFoto.setForeground(Color.WHITE);
-		lblFoto.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblFoto.setBounds(173, 393, 161, 40);
-		getContentPane().add(lblFoto);
 		
 		JLabel lblDatadoVoto = new JLabel("Data do Voto");
 		lblDatadoVoto.setForeground(Color.WHITE);
