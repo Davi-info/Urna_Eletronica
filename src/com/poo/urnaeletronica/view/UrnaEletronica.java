@@ -1,19 +1,19 @@
 package com.poo.urnaeletronica.view;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
 import java.awt.Color;
-import java.awt.SystemColor;
-import javax.swing.JButton;
 import java.awt.Font;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import java.awt.SystemColor;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
-public class UrnaEletronica {
+public class UrnaEletronica extends JFrame {
 
-	private JFrame frame;
+	//private JFrame frame;
 	private JTextField textField;
 
 	/**
@@ -27,15 +27,16 @@ public class UrnaEletronica {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1080, 576);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		//frame = new JFrame();
+		setTitle("Urna Eletronica");
+		setBounds(100, 100, 1080, 576);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.control);
 		panel.setBounds(0, 0, 1064, 537);
-		frame.getContentPane().add(panel);
+		getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
@@ -52,62 +53,62 @@ public class UrnaEletronica {
 		panel_1.add(panel_4);
 		panel_4.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("APERTE A TECLA");
-		lblNewLabel.setBounds(10, 11, 123, 19);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		panel_4.add(lblNewLabel);
+		JLabel lblAperteTecla = new JLabel("APERTE A TECLA");
+		lblAperteTecla.setBounds(10, 11, 123, 19);
+		lblAperteTecla.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel_4.add(lblAperteTecla);
 		
-		JLabel lblNewLabel_1 = new JLabel("VERDE");
-		lblNewLabel_1.setForeground(new Color(50, 205, 50));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1.setBounds(39, 49, 46, 14);
-		panel_4.add(lblNewLabel_1);
+		JLabel lblVerde = new JLabel("VERDE");
+		lblVerde.setForeground(new Color(50, 205, 50));
+		lblVerde.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblVerde.setBounds(39, 49, 46, 14);
+		panel_4.add(lblVerde);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("LARANJA");
-		lblNewLabel_1_1.setForeground(new Color(255, 140, 0));
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1_1.setBounds(39, 74, 65, 14);
-		panel_4.add(lblNewLabel_1_1);
+		JLabel lblLaranja = new JLabel("LARANJA");
+		lblLaranja.setForeground(new Color(255, 140, 0));
+		lblLaranja.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblLaranja.setBounds(39, 74, 65, 14);
+		panel_4.add(lblLaranja);
 		
-		JLabel lblNewLabel_2 = new JLabel("para");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_2.setBounds(88, 49, 46, 14);
-		panel_4.add(lblNewLabel_2);
+		JLabel lblpara = new JLabel("para");
+		lblpara.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblpara.setBounds(88, 49, 46, 14);
+		panel_4.add(lblpara);
 		
-		JLabel lblNewLabel_3 = new JLabel("CONFIRMAR");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel_3.setBounds(123, 49, 110, 14);
-		panel_4.add(lblNewLabel_3);
+		JLabel lblConfirmar = new JLabel("CONFIRMAR");
+		lblConfirmar.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblConfirmar.setBounds(123, 49, 110, 14);
+		panel_4.add(lblConfirmar);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("para");
-		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_2_1.setBounds(108, 74, 46, 14);
-		panel_4.add(lblNewLabel_2_1);
+		JLabel lblpara2 = new JLabel("para");
+		lblpara2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblpara2.setBounds(108, 74, 46, 14);
+		panel_4.add(lblpara2);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("CORRIGIR");
-		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel_3_1.setBounds(143, 74, 110, 14);
-		panel_4.add(lblNewLabel_3_1);
+		JLabel lblCorrigir = new JLabel("CORRIGIR");
+		lblCorrigir.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblCorrigir.setBounds(143, 74, 110, 14);
+		panel_4.add(lblCorrigir);
 		
-		JLabel lblNewLabel_4 = new JLabel("ELEIÇÃO GERAL");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel_4.setBounds(34, 24, 244, 25);
-		panel_1.add(lblNewLabel_4);
+		JLabel lblEleicao = new JLabel("ELEIÇÃO GERAL");
+		lblEleicao .setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblEleicao .setBounds(34, 24, 244, 25);
+		panel_1.add(lblEleicao );
 		
-		JLabel lblNewLabel_5 = new JLabel("NÚMERO");
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_5.setBounds(21, 122, 77, 14);
-		panel_1.add(lblNewLabel_5);
+		JLabel lblNumero = new JLabel("NÚMERO");
+		lblNumero.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNumero.setBounds(21, 122, 77, 14);
+		panel_1.add(lblNumero);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("NOME");
-		lblNewLabel_5_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_5_1.setBounds(21, 180, 77, 14);
-		panel_1.add(lblNewLabel_5_1);
+		JLabel lblNome = new JLabel("NOME");
+		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNome.setBounds(21, 180, 77, 14);
+		panel_1.add(lblNome);
 		
-		JLabel lblNewLabel_5_2 = new JLabel("PARTIDO");
-		lblNewLabel_5_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_5_2.setBounds(21, 241, 110, 14);
-		panel_1.add(lblNewLabel_5_2);
+		JLabel lblPartido = new JLabel("PARTIDO");
+		lblPartido.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblPartido.setBounds(21, 241, 110, 14);
+		panel_1.add(lblPartido);
 		
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -127,101 +128,101 @@ public class UrnaEletronica {
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 		
-		JButton btnNewButton = new JButton("1");
-		btnNewButton.setBackground(Color.DARK_GRAY);
-		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton.setBounds(53, 40, 66, 39);
-		panel_2.add(btnNewButton);
+		JButton btnUm = new JButton("1");
+		btnUm.setBackground(Color.DARK_GRAY);
+		btnUm.setForeground(Color.WHITE);
+		btnUm.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnUm.setBounds(53, 40, 66, 39);
+		panel_2.add(btnUm);
 		
-		JButton btnNewButton_1 = new JButton("2");
-		btnNewButton_1.setForeground(Color.WHITE);
-		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_1.setBackground(Color.DARK_GRAY);
-		btnNewButton_1.setBounds(153, 40, 66, 39);
-		panel_2.add(btnNewButton_1);
+		JButton btnDois = new JButton("2");
+		btnDois.setForeground(Color.WHITE);
+		btnDois.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnDois.setBackground(Color.DARK_GRAY);
+		btnDois.setBounds(153, 40, 66, 39);
+		panel_2.add(btnDois);
 		
-		JButton btnNewButton_2 = new JButton("3");
-		btnNewButton_2.setForeground(Color.WHITE);
-		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_2.setBackground(Color.DARK_GRAY);
-		btnNewButton_2.setBounds(250, 40, 66, 39);
-		panel_2.add(btnNewButton_2);
+		JButton btnTres = new JButton("3");
+		btnTres.setForeground(Color.WHITE);
+		btnTres.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnTres.setBackground(Color.DARK_GRAY);
+		btnTres.setBounds(250, 40, 66, 39);
+		panel_2.add(btnTres);
 		
-		JButton btnNewButton_3 = new JButton("4");
-		btnNewButton_3.setForeground(Color.WHITE);
-		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_3.setBackground(Color.DARK_GRAY);
-		btnNewButton_3.setBounds(53, 91, 66, 39);
-		panel_2.add(btnNewButton_3);
+		JButton btnQuatro = new JButton("4");
+		btnQuatro.setForeground(Color.WHITE);
+		btnQuatro.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnQuatro.setBackground(Color.DARK_GRAY);
+		btnQuatro.setBounds(53, 91, 66, 39);
+		panel_2.add(btnQuatro);
 		
-		JButton btnNewButton_1_1 = new JButton("5");
-		btnNewButton_1_1.setForeground(Color.WHITE);
-		btnNewButton_1_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_1_1.setBackground(Color.DARK_GRAY);
-		btnNewButton_1_1.setBounds(153, 91, 66, 39);
-		panel_2.add(btnNewButton_1_1);
+		JButton btnCinco = new JButton("5");
+		btnCinco.setForeground(Color.WHITE);
+		btnCinco.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnCinco.setBackground(Color.DARK_GRAY);
+		btnCinco.setBounds(153, 91, 66, 39);
+		panel_2.add(btnCinco);
 		
-		JButton btnNewButton_2_1 = new JButton("6");
-		btnNewButton_2_1.setForeground(Color.WHITE);
-		btnNewButton_2_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_2_1.setBackground(Color.DARK_GRAY);
-		btnNewButton_2_1.setBounds(250, 91, 66, 39);
-		panel_2.add(btnNewButton_2_1);
+		JButton btnSeis = new JButton("6");
+		btnSeis.setForeground(Color.WHITE);
+		btnSeis.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnSeis.setBackground(Color.DARK_GRAY);
+		btnSeis.setBounds(250, 91, 66, 39);
+		panel_2.add(btnSeis);
 		
-		JButton btnNewButton_4 = new JButton("7");
-		btnNewButton_4.setForeground(Color.WHITE);
-		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_4.setBackground(Color.DARK_GRAY);
-		btnNewButton_4.setBounds(53, 141, 66, 39);
-		panel_2.add(btnNewButton_4);
+		JButton btnSete = new JButton("7");
+		btnSete.setForeground(Color.WHITE);
+		btnSete.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnSete.setBackground(Color.DARK_GRAY);
+		btnSete.setBounds(53, 141, 66, 39);
+		panel_2.add(btnSete);
 		
-		JButton btnNewButton_1_2 = new JButton("8");
-		btnNewButton_1_2.setForeground(Color.WHITE);
-		btnNewButton_1_2.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_1_2.setBackground(Color.DARK_GRAY);
-		btnNewButton_1_2.setBounds(153, 141, 66, 39);
-		panel_2.add(btnNewButton_1_2);
+		JButton btnOito = new JButton("8");
+		btnOito.setForeground(Color.WHITE);
+		btnOito.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnOito.setBackground(Color.DARK_GRAY);
+		btnOito.setBounds(153, 141, 66, 39);
+		panel_2.add(btnOito);
 		
-		JButton btnNewButton_2_2 = new JButton("9");
-		btnNewButton_2_2.setForeground(Color.WHITE);
-		btnNewButton_2_2.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_2_2.setBackground(Color.DARK_GRAY);
-		btnNewButton_2_2.setBounds(250, 141, 66, 39);
-		panel_2.add(btnNewButton_2_2);
+		JButton btnNove = new JButton("9");
+		btnNove.setForeground(Color.WHITE);
+		btnNove.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnNove.setBackground(Color.DARK_GRAY);
+		btnNove.setBounds(250, 141, 66, 39);
+		panel_2.add(btnNove);
 		
-		JButton btnNewButton_1_2_1 = new JButton("0");
-		btnNewButton_1_2_1.setForeground(Color.WHITE);
-		btnNewButton_1_2_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton_1_2_1.setBackground(Color.DARK_GRAY);
-		btnNewButton_1_2_1.setBounds(153, 191, 66, 39);
-		panel_2.add(btnNewButton_1_2_1);
+		JButton btnZero = new JButton("0");
+		btnZero.setForeground(Color.WHITE);
+		btnZero.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnZero.setBackground(Color.DARK_GRAY);
+		btnZero.setBounds(153, 191, 66, 39);
+		panel_2.add(btnZero);
 		
-		JButton btnNewButton_5 = new JButton("BRANCO");
-		btnNewButton_5.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnNewButton_5.setBackground(Color.WHITE);
-		btnNewButton_5.setBounds(32, 279, 89, 39);
-		panel_2.add(btnNewButton_5);
+		JButton btnBranco = new JButton("BRANCO");
+		btnBranco.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnBranco.setBackground(Color.WHITE);
+		btnBranco.setBounds(32, 279, 89, 39);
+		panel_2.add(btnBranco);
 		
-		JButton btnNewButton_5_1 = new JButton("CORRIGE");
-		btnNewButton_5_1.setBackground(new Color(255, 140, 0));
-		btnNewButton_5_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnNewButton_5_1.setBounds(142, 279, 89, 39);
-		panel_2.add(btnNewButton_5_1);
+		JButton btnCorrige = new JButton("CORRIGE");
+		btnCorrige.setBackground(new Color(255, 140, 0));
+		btnCorrige.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnCorrige.setBounds(142, 279, 89, 39);
+		panel_2.add(btnCorrige);
 		
-		JButton btnNewButton_5_1_1 = new JButton("CONFIRMA");
-		btnNewButton_5_1_1.setBackground(new Color(50, 205, 50));
-		btnNewButton_5_1_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnNewButton_5_1_1.setBounds(247, 241, 105, 77);
-		panel_2.add(btnNewButton_5_1_1);
+		JButton btnConfirma = new JButton("CONFIRMA");
+		btnConfirma.setBackground(new Color(50, 205, 50));
+		btnConfirma.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnConfirma.setBounds(247, 241, 105, 77);
+		panel_2.add(btnConfirma);
 		
-		JLabel lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setIcon(new ImageIcon(UrnaEletronica.class.getResource("IFPILogo.jpg")));
-		lblNewLabel_6.setBounds(654, 35, 385, 115);
-		panel.add(lblNewLabel_6);
+		JLabel lblIfpiLogo = new JLabel("New label");
+		lblIfpiLogo.setIcon(new ImageIcon(UrnaEletronica.class.getResource("IFPILogo.jpg")));
+		lblIfpiLogo.setBounds(654, 35, 385, 115);
+		panel.add(lblIfpiLogo);
 	}
 	
 	public void start() {
-		frame.setVisible(true);
+		setVisible(true);
 	}
 }
