@@ -17,6 +17,7 @@ public class CandidatoController {
     }
 
     // Busca um candidato pelo ID
+    // busca peo id cand
     public Candidato buscarCandidato(int id) {
         for (Candidato candidato : candidatos) {
             if (candidato.getId() == id) {
