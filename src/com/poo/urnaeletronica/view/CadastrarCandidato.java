@@ -4,12 +4,18 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import com.poo.urnaeletronica.ArquivoUtils;
+
 import javax.swing.JComboBox;
 
 public class CadastrarCandidato extends JFrame {
@@ -66,10 +72,28 @@ public class CadastrarCandidato extends JFrame {
 
 		btnVisualizarCandidato.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VisualizarCandidato visualizarCandidato = new VisualizarCandidato(); // Cria a tela de cadastro de cargo
-				visualizarCandidato.setVisible(true); // Torna a tela visível
-			}
-		});
+				List<String> candidatos = ArquivoUtils.lerCandidatos();
+        		if (candidatos.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Nenhum candidato cadastrado.");} 
+				else {
+					StringBuilder mensagem = new StringBuilder("Candidatos Cadastrados:\n");
+            		for (String candidato : candidatos) {
+						String[] dados = candidato.split(";");
+						if (dados.length == 3) {  // Evita erro caso a linha esteja mal formatada
+							mensagem.append("Nome: ").append(dados[0])
+									.append(", Cargo: ").append(dados[1])
+									.append(", Partido: ").append(dados[2])
+									.append("\n");
+						} else {
+							mensagem.append("Candidato com dados inválidos: ").append(candidato).append("\n");
+						}
+					}
+					
+            		JOptionPane.showMessageDialog(null, mensagem.toString());
+        }
+    }
+});
+
 		
 		JButton btnExcluir = new JButton("Excluir");
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -80,11 +104,30 @@ public class CadastrarCandidato extends JFrame {
 		btnBusca.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnBusca.setBounds(28, 252, 102, 34);
 		getContentPane().add(btnBusca);
+
 		
+
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnSalvar.setBounds(28, 166, 102, 34);
 		getContentPane().add(btnSalvar);
+
+		
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nome = textField.getText();
+        		String cargo = (String) textField_1.getSelectedItem();
+        		String partido = textField_2.getText();
+
+        		if (!nome.isEmpty() && cargo != null && !partido.isEmpty()) {
+					ArquivoUtils.salvarCandidato(nome, cargo, partido);
+            		JOptionPane.showMessageDialog(null, "Candidato salvo com sucesso!");} 
+				else {
+            		JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+        }
+    }
+});
+
 		
 		JLabel lblPartido = new JLabel("Partido");
 		lblPartido.setForeground(Color.WHITE);
