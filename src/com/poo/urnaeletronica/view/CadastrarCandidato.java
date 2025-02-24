@@ -2,181 +2,131 @@ package com.poo.urnaeletronica.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import com.poo.urnaeletronica.ArquivoUtils;
+import com.poo.urnaeletronica.components.Botao;
+import com.poo.urnaeletronica.components.CampoDeTexto;
+import com.poo.urnaeletronica.components.Etiqueta;
 
 import javax.swing.JComboBox;
 
 public class CadastrarCandidato extends JFrame {
+	private CampoDeTexto nomeCandidato;
+	private JComboBox cargoCandidato;
+	private CampoDeTexto partidoCandidato;
 
-	//private JFrame frame;
-	private JTextField textField;
-	private JComboBox textField_1;
-	private JTextField textField_2;
-
-	/**
-	 * Create the application.
-	 */
 	public CadastrarCandidato() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		setTitle("Cadastrar Candidato");
 		setBounds(100, 100, 1025, 576);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(CadastrarCandidato.class.getResource("/com/poo/urnaeletronica/view/candidate.jpg")));
-		lblNewLabel_1.setBounds(750, 166, 153, 161);
-		getContentPane().add(lblNewLabel_1);
-		
-		JButton btnSair = new JButton("Sair");
-		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnSair.setBounds(443, 444, 94, 34);
+
+		// Imagem estatica de um candidato
+		JLabel imagemCandidato = new JLabel("New label");
+		imagemCandidato.setIcon(new ImageIcon(CadastrarCandidato.class.getResource("../images/candidate.jpg")));
+		imagemCandidato.setBounds(750, 166, 153, 161);
+		getContentPane().add(imagemCandidato);
+
+		Botao btnSair = new Botao("Sair", 443, 444, 94, 34, e -> System.exit(0));
 		getContentPane().add(btnSair);
-		btnSair.addActionListener(e -> System.exit(0));
-		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnVoltar.setBounds(239, 444, 102, 34);
-		getContentPane().add(btnVoltar);
-		
-		btnVoltar.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        dispose(); // Fecha a janela atual
-		        Menu telaMenu = new Menu(); // Cria uma instância da tela anterior
-		        telaMenu.setVisible(false); // Exibe a tela anterior
-		    }
+
+		Botao btnVoltar = new Botao("Voltar", 239, 444, 102, 34, e -> {
+			dispose(); // Fecha a janela atual
+			Menu telaMenu = new Menu(); // Cria uma instância da tela anterior
+			telaMenu.setVisible(false); // Exibe a tela anterior
 		});
-		
-		JButton btnVisualizarCandidato = new JButton("Visualizar");
-		btnVisualizarCandidato.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnVisualizarCandidato.setBounds(28, 444, 102, 34);
+		getContentPane().add(btnVoltar);
+
+		Botao btnVisualizarCandidato = new Botao("Visualizar", 28, 444, 102, 34, e -> {
+			List<String> candidatos = ArquivoUtils.lerCandidatos();
+			if (candidatos.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Nenhum candidato cadastrado.");
+			} else {
+				StringBuilder mensagem = new StringBuilder("Candidatos Cadastrados:\n");
+				for (String candidato : candidatos) {
+					String[] dados = candidato.split(";");
+					if (dados.length == 3) { // Evita erro caso a linha esteja mal formatada
+						mensagem.append("Nome: ").append(dados[0])
+								.append(", Cargo: ").append(dados[1])
+								.append(", Partido: ").append(dados[2])
+								.append("\n");
+					} else {
+						mensagem.append("Candidato com dados inválidos: ").append(candidato).append("\n");
+					}
+				}
+				JOptionPane.showMessageDialog(null, mensagem.toString());
+			}
+		});
 		getContentPane().add(btnVisualizarCandidato);
 
-		btnVisualizarCandidato.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				List<String> candidatos = ArquivoUtils.lerCandidatos();
-        		if (candidatos.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Nenhum candidato cadastrado.");} 
-				else {
-					StringBuilder mensagem = new StringBuilder("Candidatos Cadastrados:\n");
-            		for (String candidato : candidatos) {
-						String[] dados = candidato.split(";");
-						if (dados.length == 3) {  // Evita erro caso a linha esteja mal formatada
-							mensagem.append("Nome: ").append(dados[0])
-									.append(", Cargo: ").append(dados[1])
-									.append(", Partido: ").append(dados[2])
-									.append("\n");
-						} else {
-							mensagem.append("Candidato com dados inválidos: ").append(candidato).append("\n");
-						}
-					}
-					
-            		JOptionPane.showMessageDialog(null, mensagem.toString());
-        }
-    }
-});
-
+		Botao btnExcluir = new Botao("Excluir", 28, 348, 102, 34, e -> {});
 		
-		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnExcluir.setBounds(28, 348, 102, 34);
 		getContentPane().add(btnExcluir);
-		
-		JButton btnBusca = new JButton("Buscar");
-		btnBusca.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnBusca.setBounds(28, 252, 102, 34);
+
+		Botao btnBusca = new Botao("Buscar", 28, 252, 102, 34, e -> {});
 		getContentPane().add(btnBusca);
 
-		
+		Botao btnSalvar = new Botao("Salvar", 28, 166, 102, 34, e -> {
+			String nome = nomeCandidato.getText();
+			String cargo = (String) cargoCandidato.getSelectedItem();
+			String partido = partidoCandidato.getText();
 
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnSalvar.setBounds(28, 166, 102, 34);
+			if (!nome.isEmpty() && cargo != null && !partido.isEmpty()) {
+				ArquivoUtils.salvarCandidato(nome, cargo, partido);
+				JOptionPane.showMessageDialog(null, "Candidato salvo com sucesso!");
+			} else {
+				JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+			}
+		});
 		getContentPane().add(btnSalvar);
 
-		
-		btnSalvar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String nome = textField.getText();
-        		String cargo = (String) textField_1.getSelectedItem();
-        		String partido = textField_2.getText();
-
-        		if (!nome.isEmpty() && cargo != null && !partido.isEmpty()) {
-					ArquivoUtils.salvarCandidato(nome, cargo, partido);
-            		JOptionPane.showMessageDialog(null, "Candidato salvo com sucesso!");} 
-				else {
-            		JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
-        }
-    }
-});
-
-		
-		JLabel lblPartido = new JLabel("Partido");
-		lblPartido.setForeground(Color.WHITE);
-		lblPartido.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblPartido.setBounds(173, 297, 161, 40);
+		Etiqueta lblPartido = new Etiqueta("Partido", 173, 297, 161, 40);
 		getContentPane().add(lblPartido);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(173, 348, 364, 34);
-		getContentPane().add(textField_2);
-		
-		JLabel lblCargo = new JLabel("Cargo");
-		lblCargo.setForeground(Color.WHITE);
-		lblCargo.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblCargo.setBounds(173, 211, 161, 40);
+
+		partidoCandidato = new CampoDeTexto(10, 173, 348, 364, 34);
+		getContentPane().add(partidoCandidato);
+
+		Etiqueta lblCargo = new Etiqueta("Cargo", 173, 211, 161, 40);
 		getContentPane().add(lblCargo);
-		
-		textField_1 = new JComboBox();
-		textField_1.setBounds(173, 252, 364, 34);
-		getContentPane().add(textField_1);
-		
-		textField = new JTextField();
-		textField.setBounds(173, 166, 364, 34);
-		getContentPane().add(textField);
-		textField.setColumns(10);
-		
-		JLabel lblNomedoCandidato = new JLabel("Nome do Candidato");
-		lblNomedoCandidato.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNomedoCandidato.setForeground(new Color(255, 255, 255));
-		lblNomedoCandidato.setBounds(173, 115, 188, 40);
+
+		cargoCandidato = new JComboBox();
+		cargoCandidato.setBounds(173, 252, 364, 34);
+		getContentPane().add(cargoCandidato);
+
+		nomeCandidato = new CampoDeTexto(10, 173, 166, 364, 34);
+		getContentPane().add(nomeCandidato);
+
+		Etiqueta lblNomedoCandidato = new Etiqueta("Nome do Candidato", 173, 115, 188, 40);
 		getContentPane().add(lblNomedoCandidato);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(0, 0, 128));
 		panel.setBounds(0, 0, 1009, 92);
 		getContentPane().add(panel);
-		
+
 		JLabel lblCadastroDoCandidato = new JLabel("CADASTRO DO CANDIDATO");
 		lblCadastroDoCandidato.setForeground(new Color(255, 255, 255));
 		lblCadastroDoCandidato.setFont(new Font("Tahoma", Font.BOLD, 50));
 		panel.add(lblCadastroDoCandidato);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(0, 0, 1009, 547);
-		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
-		getContentPane().add(lblNewLabel);
+
+		// Imagem de fundo
+		JLabel imagemDeFundo = new JLabel("New label");
+		imagemDeFundo.setBounds(0, 0, 1009, 547);
+		imagemDeFundo.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
+		getContentPane().add(imagemDeFundo);
 	}
-	
+
 	public void start() {
 		setVisible(true);
 	}
