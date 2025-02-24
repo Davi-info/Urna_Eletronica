@@ -3,11 +3,8 @@ package com.poo.urnaeletronica.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,21 +12,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import com.poo.urnaeletronica.components.Botao;
+
 public class VisualizarCargo extends JFrame {
 
-	//private JFrame frame;
 	private JTable table;
 
-	/**
-	 * Create the application.
-	 */
 	public VisualizarCargo() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		//frame = new JFrame();
 		setTitle("Visualizar Cargo");
@@ -67,25 +59,15 @@ public class VisualizarCargo extends JFrame {
 		scrollPane.setBounds(118, 148, 753, 45);
 		getContentPane().add(scrollPane);
 		
-		JButton btnSair = new JButton("Sair");
-		btnSair.setBounds(806, 492, 94, 34);
-		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
+		Botao btnSair = new Botao("Sair", 806, 492, 94, 34, e -> System.exit(0));
 		getContentPane().add(btnSair);
-		btnSair.addActionListener(e -> System.exit(0));
 		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(694, 492, 102, 34);
-		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
+        Botao btnVoltar = new Botao("Voltar", 694, 492, 102, 34, e -> {
+            dispose(); // Fecha a janela atual
+            CadastrarCargo cadastrarCargo = new CadastrarCargo(); // Cria uma instância da tela anterior
+            cadastrarCargo.setVisible(false); // Exibe a tela anterior
+        });
 		getContentPane().add(btnVoltar);
-		
-		btnVoltar.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        dispose(); // Fecha a janela atual
-		        CadastrarCargo cadastrarCargo = new CadastrarCargo(); // Cria uma instância da tela anterior
-		        cadastrarCargo.setVisible(false); // Exibe a tela anterior
-		    }
-		});
-		
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 1009, 92);
@@ -97,10 +79,10 @@ public class VisualizarCargo extends JFrame {
 		lblCargosCadastrados.setFont(new Font("Tahoma", Font.BOLD, 50));
 		panel.add(lblCargosCadastrados);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(-16, -10, 1025, 547);
-		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
-		getContentPane().add(lblNewLabel);
+		JLabel imagemDeFundo = new JLabel("Imagem de fundo");
+		imagemDeFundo.setBounds(-16, -10, 1025, 547);
+		imagemDeFundo.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
+		getContentPane().add(imagemDeFundo);
 	}
 	
 	public void start() {
