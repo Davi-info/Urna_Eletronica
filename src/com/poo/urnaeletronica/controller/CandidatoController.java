@@ -43,4 +43,6 @@ public class CandidatoController {
     public List<Candidato> listarCandidatos() {
         return candidatos;
     }
+
+}
 }
