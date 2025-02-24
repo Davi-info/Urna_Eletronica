@@ -76,7 +76,7 @@ public class LoginView {
         frame.getContentPane().add(senhaField);
         
         JLabel lblNewLabel = new JLabel("New label");
-        lblNewLabel.setIcon(new ImageIcon(LoginView.class.getResource("/com/poo/urnaeletronica/view/TelaLogin.png")));
+        lblNewLabel.setIcon(new ImageIcon(LoginView.class.getResource("../images/TelaLogin.png")));
         lblNewLabel.setBounds(0, 0, 667, 345);
         frame.getContentPane().add(lblNewLabel);
 

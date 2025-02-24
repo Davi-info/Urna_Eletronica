@@ -34,7 +34,7 @@ public class Menu extends JFrame{
 		
 		JButton btnRelatorio = new JButton("Relatório");
 		btnRelatorio.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnRelatorio.setIcon(new ImageIcon(Menu.class.getResource("IconeRelatorio.png")));
+		btnRelatorio.setIcon(new ImageIcon(Menu.class.getResource("../images/IconeRelatorio.png")));
 		btnRelatorio.setBounds(703, 69, 147, 79);
 		getContentPane().add(btnRelatorio);
 		btnRelatorio.addActionListener(new ActionListener() {
@@ -49,13 +49,13 @@ public class Menu extends JFrame{
 		btnSair.addActionListener(e -> System.exit(0));
 		
 		JButton btnLimpar = new JButton("Limpar Dados do Banco");
-		btnLimpar.setIcon(new ImageIcon(Menu.class.getResource("IconeLimpaDados.png")));
+		btnLimpar.setIcon(new ImageIcon(Menu.class.getResource("../images/IconeLimpaDados.png")));
 		btnLimpar.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnLimpar.setBounds(530, 183, 324, 79);
 		getContentPane().add(btnLimpar);
 		
 		JButton btnCadastrarCargo = new JButton("Cadastrar Cargo");
-		btnCadastrarCargo.setIcon(new ImageIcon(Menu.class.getResource("IconeCadastro.png")));
+		btnCadastrarCargo.setIcon(new ImageIcon(Menu.class.getResource("../images/IconeCadastro.png")));
 		btnCadastrarCargo.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnCadastrarCargo.setBounds(88, 406, 324, 79);
 		getContentPane().add(btnCadastrarCargo);
@@ -69,7 +69,7 @@ public class Menu extends JFrame{
 
 		
 		JButton btnCadastrarEleicao = new JButton("Cadastrar Eleição");
-		btnCadastrarEleicao.setIcon(new ImageIcon(Menu.class.getResource("IconeCadastro.png")));
+		btnCadastrarEleicao.setIcon(new ImageIcon(Menu.class.getResource("../images/IconeCadastro.png")));
 		btnCadastrarEleicao.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnCadastrarEleicao.setBounds(88, 294, 324, 79);
 		getContentPane().add(btnCadastrarEleicao);
@@ -82,7 +82,7 @@ public class Menu extends JFrame{
 		});
 		
 		JButton btnCadastrarCandidato = new JButton("Cadastrar Candidato");
-		btnCadastrarCandidato.setIcon(new ImageIcon(Menu.class.getResource("IconeCadastro.png")));
+		btnCadastrarCandidato.setIcon(new ImageIcon(Menu.class.getResource("../images/IconeCadastro.png")));
 		btnCadastrarCandidato.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnCadastrarCandidato.setBounds(88, 183, 324, 79);
 		getContentPane().add(btnCadastrarCandidato);
@@ -96,7 +96,7 @@ public class Menu extends JFrame{
 
 		
 		JButton btnCadastrarEleitor = new JButton("Cadastrar Eleitor");
-		btnCadastrarEleitor.setIcon(new ImageIcon(Menu.class.getResource("IconeCadastro.png")));
+		btnCadastrarEleitor.setIcon(new ImageIcon(Menu.class.getResource("../images/IconeCadastro.png")));
 		btnCadastrarEleitor.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnCadastrarEleitor.setBounds(88, 69, 324, 79);
 		getContentPane().add(btnCadastrarEleitor);
@@ -110,7 +110,7 @@ public class Menu extends JFrame{
 		
 		JButton btnUrnaEletronica = new JButton("Urna");
 		btnUrnaEletronica.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnUrnaEletronica.setIcon(new ImageIcon(Menu.class.getResource("IconeUrna.png")));
+		btnUrnaEletronica.setIcon(new ImageIcon(Menu.class.getResource("../images/IconeUrna.png")));
 		btnUrnaEletronica.setBounds(530, 69, 147, 79);
 		getContentPane().add(btnUrnaEletronica);
 
@@ -124,7 +124,7 @@ public class Menu extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(0, 0, 1009, 537);
-		lblNewLabel.setIcon(new ImageIcon(Menu.class.getResource("TelaMenu.png")));
+		lblNewLabel.setIcon(new ImageIcon(Menu.class.getResource("../images/TelaMenu.png")));
 		getContentPane().add(lblNewLabel);
 	}
 

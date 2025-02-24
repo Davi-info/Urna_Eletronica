@@ -217,7 +217,7 @@ public class UrnaEletronica extends JFrame {
 		panel_2.add(btnConfirma);
 		
 		JLabel lblIfpiLogo = new JLabel("New label");
-		lblIfpiLogo.setIcon(new ImageIcon(UrnaEletronica.class.getResource("IFPILogo.jpg")));
+		lblIfpiLogo.setIcon(new ImageIcon(UrnaEletronica.class.getResource("../images/IFPILogo.jpg")));
 		lblIfpiLogo.setBounds(654, 35, 385, 115);
 		panel.add(lblIfpiLogo);
 	}

@@ -161,7 +161,7 @@ public class CadastrarEleicao extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(0, -11, 1009, 558);
-		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("TelaMenu.png")));
+		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
 		getContentPane().add(lblNewLabel);
 	}
 

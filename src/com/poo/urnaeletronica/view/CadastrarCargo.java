@@ -105,7 +105,7 @@ public class CadastrarCargo extends JFrame {
 
         JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(0, 0, 1009, 547);
-		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("TelaMenu.png")));
+		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
 		getContentPane().add(lblNewLabel);
 
         // 🎯 AÇÕES DOS BOTÕES

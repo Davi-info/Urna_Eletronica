@@ -98,7 +98,7 @@ public class VisualizarEleicao extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(-16, -10, 1025, 547);
-		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("TelaMenu.png")));
+		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
 		getContentPane().add(lblNewLabel);
 	}
 	
