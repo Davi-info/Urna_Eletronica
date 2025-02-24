@@ -2,121 +2,78 @@ package com.poo.urnaeletronica.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+
+import com.poo.urnaeletronica.components.Botao;
+import com.poo.urnaeletronica.components.CampoDeTexto;
+import com.poo.urnaeletronica.components.Etiqueta;
 
 public class CadastrarEleitor extends JFrame {
 
 	//private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private CampoDeTexto nomeEleitor;
+	private CampoDeTexto votoEleitor;
+	private CampoDeTexto dataVoto;
 
-	/**
-	 * Create the application.
-	 */
 	public CadastrarEleitor() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
-		//frame = new JFrame();
 		setTitle("Cadastrar Eleição");
 		setBounds(100, 100, 1025, 576);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("/com/poo/urnaeletronica/view/candidate.jpg")));
-		lblNewLabel_1.setBounds(739, 166, 153, 171);
-		getContentPane().add(lblNewLabel_1);
+		JLabel imagemEleitor = new JLabel("Imagem eleitor");
+		imagemEleitor.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/candidate.jpg")));
+		imagemEleitor.setBounds(739, 166, 153, 171);
+		getContentPane().add(imagemEleitor);
 		
-		JButton btnSair = new JButton("Sair");
-		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnSair.setBounds(443, 444, 94, 34);
+		Botao btnSair = new Botao("Sair", 443, 444, 94, 34, e -> System.exit(0));
 		getContentPane().add(btnSair);
-		btnSair.addActionListener(e -> System.exit(0));
 		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnVoltar.setBounds(232, 444, 102, 34);
+		Botao btnVoltar = new Botao("Voltar", 232, 444, 102, 34, e -> {
+			dispose(); // Fecha a janela atual
+			Menu telaMenu = new Menu(); // Cria uma instância da tela anterior
+			telaMenu.setVisible(false); // Exibe a tela anterior
+		});
 		getContentPane().add(btnVoltar);
 		
-		btnVoltar.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        dispose(); // Fecha a janela atual
-		        Menu telaMenu = new Menu(); // Cria uma instância da tela anterior
-		        telaMenu.setVisible(false); // Exibe a tela anterior
-		    }
+		Botao btnVisualizarEleitor = new Botao("Visualizar", 28, 444, 102, 34, e -> {
+			VisualizarEleitor visualizarEleitor = new VisualizarEleitor(); // Cria a tela de cadastro de cargo
+			visualizarEleitor.setVisible(true); // Torna a tela visível
 		});
-		
-		JButton btnVisualizarEleitor = new JButton("Visualizar");
-		btnVisualizarEleitor.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnVisualizarEleitor.setBounds(28, 444, 102, 34);
 		getContentPane().add(btnVisualizarEleitor);
-
-		btnVisualizarEleitor.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VisualizarEleitor visualizarEleitor = new VisualizarEleitor(); // Cria a tela de cadastro de cargo
-				visualizarEleitor.setVisible(true); // Torna a tela visível
-			}
-		});
 		
-		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnExcluir.setBounds(28, 348, 102, 34);
+		Botao btnExcluir = new Botao("Excluir", 28, 348, 102, 34, e -> {});
 		getContentPane().add(btnExcluir);
 		
-		JButton btnBusca = new JButton("Buscar");
-		btnBusca.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnBusca.setBounds(28, 252, 102, 34);
+		Botao btnBusca = new Botao("Buscar", 28, 252, 102, 34, e -> {});
 		getContentPane().add(btnBusca);
 		
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnSalvar.setBounds(28, 166, 102, 34);
+		Botao btnSalvar = new Botao("Salvar", 28, 166, 102, 34, e -> {});
 		getContentPane().add(btnSalvar);
 		
-		JLabel lblDatadoVoto = new JLabel("Data do Voto");
-		lblDatadoVoto.setForeground(Color.WHITE);
-		lblDatadoVoto.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblDatadoVoto.setBounds(173, 297, 161, 40);
+		Etiqueta lblDatadoVoto = new Etiqueta("Data do Voto", 173, 297, 161, 40);
 		getContentPane().add(lblDatadoVoto);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(173, 348, 364, 34);
-		getContentPane().add(textField_2);
+		dataVoto = new CampoDeTexto(10, 173, 348, 364, 34);
+		getContentPane().add(dataVoto);
 		
-		JLabel lblVoto = new JLabel("Voto");
-		lblVoto.setForeground(Color.WHITE);
-		lblVoto.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblVoto.setBounds(173, 211, 161, 40);
+		Etiqueta lblVoto = new Etiqueta("Voto", 173, 211, 161, 40);
 		getContentPane().add(lblVoto);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(173, 252, 364, 34);
-		getContentPane().add(textField_1);
+		votoEleitor = new CampoDeTexto(10, 173, 252, 364, 34);
+		getContentPane().add(votoEleitor);
 		
-		textField = new JTextField();
-		textField.setBounds(173, 166, 364, 34);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		nomeEleitor = new CampoDeTexto(10, 173, 166, 364, 34);
+		getContentPane().add(nomeEleitor);
 		
-		JLabel lblNome = new JLabel("Nome do Eleitor");
-		lblNome.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNome.setForeground(new Color(255, 255, 255));
-		lblNome.setBounds(173, 115, 161, 40);
+		Etiqueta lblNome = new Etiqueta("Nome do Eleitor", 173, 115, 161, 40);
 		getContentPane().add(lblNome);
 		
 		JPanel panel = new JPanel();
@@ -129,10 +86,10 @@ public class CadastrarEleitor extends JFrame {
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 50));
 		panel.add(lblTitulo);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(0, -11, 1009, 558);
-		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
-		getContentPane().add(lblNewLabel);
+		JLabel imagemDeFundo = new JLabel("Imagem de fundo");
+		imagemDeFundo.setBounds(0, -11, 1009, 558);
+		imagemDeFundo.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("../images/TelaMenu.png")));
+		getContentPane().add(imagemDeFundo);
 	}
 
 	public void start() {
