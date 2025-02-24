@@ -2,18 +2,18 @@ package com.poo.urnaeletronica.view;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JOptionPane;
 
 import com.poo.urnaeletronica.components.Botao;
+import com.poo.urnaeletronica.components.CampoDeTexto;
 import com.poo.urnaeletronica.components.Etiqueta;
 import com.poo.urnaeletronica.controller.UsuarioController;
 import com.poo.urnaeletronica.model.Usuario;
 
 public class LoginView extends JFrame {
-    private JTextField loginField;
-    private JPasswordField senhaField;
+    private CampoDeTexto campoLogin;
+    private JPasswordField campoSenha;
     private UsuarioController usuarioController;
     private Usuario usuarioLogado;
 
@@ -34,8 +34,8 @@ public class LoginView extends JFrame {
 
         Botao btnLogin = new Botao("Entrar", 378, 291,
         100, 30, e -> {
-            String login = loginField.getText();
-            String senha = new String(senhaField.getPassword());
+            String login = campoLogin.getText();
+            String senha = new String(campoSenha.getPassword());
 
             usuarioLogado = usuarioController.autenticar(login, senha);
 
@@ -52,17 +52,15 @@ public class LoginView extends JFrame {
         Etiqueta lblLogin = new Etiqueta("Login:", 374, 93, 80, 25);
         getContentPane().add(lblLogin);
 
-        loginField = new JTextField();
-        loginField.setBounds(374, 129, 242, 25);
-        getContentPane().add(loginField);
-        loginField.setColumns(10);
+        campoLogin = new CampoDeTexto(10, 374, 129, 242, 25);
+        getContentPane().add(campoLogin);
 
         Etiqueta lblSenha = new Etiqueta("Senha:", 374, 175, 80, 25);
         getContentPane().add(lblSenha);
 
-        senhaField = new JPasswordField();
-        senhaField.setBounds(374, 211, 242, 25);
-        getContentPane().add(senhaField);
+        campoSenha = new JPasswordField();
+        campoSenha.setBounds(374, 211, 242, 25);
+        getContentPane().add(campoSenha);
         
         // Imagem de fundo
         Etiqueta imagemDeFundo = new Etiqueta("Imagem de fundo", 0, 0, 667, 345);
