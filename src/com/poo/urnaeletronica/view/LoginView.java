@@ -5,10 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JOptionPane;
-import javax.swing.JLabel;
 
-import com.poo.urnaeletronica.components.Button;
-import com.poo.urnaeletronica.components.Label;
+import com.poo.urnaeletronica.components.Botao;
+import com.poo.urnaeletronica.components.Etiqueta;
 import com.poo.urnaeletronica.controller.UsuarioController;
 import com.poo.urnaeletronica.model.Usuario;
 
@@ -29,11 +28,11 @@ public class LoginView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
                 
-        Button btnSair = new Button("Sair", 516, 291,
+        Botao btnSair = new Botao("Sair", 516, 291,
             100, 30, e -> System.exit(0));
         getContentPane().add(btnSair);
 
-        Button btnLogin = new Button("Entrar", 378, 291,
+        Botao btnLogin = new Botao("Entrar", 378, 291,
         100, 30, e -> {
             String login = loginField.getText();
             String senha = new String(senhaField.getPassword());
@@ -50,7 +49,7 @@ public class LoginView extends JFrame {
         });
         getContentPane().add(btnLogin);
 
-        Label lblLogin = new Label("Login:", 374, 93, 80, 25);
+        Etiqueta lblLogin = new Etiqueta("Login:", 374, 93, 80, 25);
         getContentPane().add(lblLogin);
 
         loginField = new JTextField();
@@ -58,7 +57,7 @@ public class LoginView extends JFrame {
         getContentPane().add(loginField);
         loginField.setColumns(10);
 
-        Label lblSenha = new Label("Senha:", 374, 175, 80, 25);
+        Etiqueta lblSenha = new Etiqueta("Senha:", 374, 175, 80, 25);
         getContentPane().add(lblSenha);
 
         senhaField = new JPasswordField();
@@ -66,10 +65,9 @@ public class LoginView extends JFrame {
         getContentPane().add(senhaField);
         
         // Imagem de fundo
-        JLabel lblNewLabel = new JLabel("New label");
-        lblNewLabel.setIcon(new ImageIcon(LoginView.class.getResource("../images/TelaLogin.png")));
-        lblNewLabel.setBounds(0, 0, 667, 345);
-        getContentPane().add(lblNewLabel);
+        Etiqueta imagemDeFundo = new Etiqueta("Imagem de fundo", 0, 0, 667, 345);
+        imagemDeFundo.setIcon(new ImageIcon(LoginView.class.getResource("../images/TelaLogin.png")));
+        getContentPane().add(imagemDeFundo);
 
         setVisible(true);
     }
