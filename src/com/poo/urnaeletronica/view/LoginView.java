@@ -1,12 +1,16 @@
 package com.poo.urnaeletronica.view;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JOptionPane;
+import javax.swing.JLabel;
+
+import com.poo.urnaeletronica.components.Button;
+import com.poo.urnaeletronica.components.Label;
 import com.poo.urnaeletronica.controller.UsuarioController;
 import com.poo.urnaeletronica.model.Usuario;
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.Font;
-import java.awt.Color;
 
 public class LoginView {
     private JFrame frame;
@@ -26,38 +30,28 @@ public class LoginView {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
                 
-                JButton btnSair = new JButton("Sair");
-                btnSair.setFont(new Font("Tahoma", Font.BOLD, 12));
-                btnSair.setBounds(516, 291, 100, 30);
-                frame.getContentPane().add(btnSair);
-                btnSair.addActionListener(e -> System.exit(0));
-        
-                JButton btnLogin = new JButton("Entrar");
-                btnLogin.setFont(new Font("Tahoma", Font.BOLD, 12));
-                btnLogin.setBounds(378, 291, 100, 30);
-                frame.getContentPane().add(btnLogin);
-                
-                        btnLogin.addActionListener(new ActionListener() {
-                            public void actionPerformed(ActionEvent e) {
-                                String login = loginField.getText();
-                                String senha = new String(senhaField.getPassword());
-                
-                                usuarioLogado = usuarioController.autenticar(login, senha);
-                
-                                if (usuarioLogado != null) {
-                                    JOptionPane.showMessageDialog(frame, "Login bem-sucedido! Bem-vindo, " + usuarioLogado.getCargo());
-                                    frame.dispose(); // Fecha a tela de login
-                                    abrirMenuPrincipal();
-                                } else {
-                                    JOptionPane.showMessageDialog(frame, "Login ou senha incorretos!", "Erro", JOptionPane.ERROR_MESSAGE);
-                                }
-                            }
-                        });
+        Button btnSair = new Button("Sair", 516, 291,
+            100, 30, e -> System.exit(0));
+        frame.getContentPane().add(btnSair);
 
-        JLabel lblLogin = new JLabel("Login:");
-        lblLogin.setForeground(Color.WHITE);
-        lblLogin.setFont(new Font("Tahoma", Font.BOLD, 15));
-        lblLogin.setBounds(374, 93, 80, 25);
+        Button btnLogin = new Button("Entrar", 378, 291,
+        100, 30, e -> {
+            String login = loginField.getText();
+            String senha = new String(senhaField.getPassword());
+
+            usuarioLogado = usuarioController.autenticar(login, senha);
+
+            if (usuarioLogado != null) {
+                JOptionPane.showMessageDialog(frame, "Login bem-sucedido! Bem-vindo, " + usuarioLogado.getCargo());
+                frame.dispose(); // Fecha a tela de login
+                abrirMenuPrincipal();
+            } else {
+                JOptionPane.showMessageDialog(frame, "Login ou senha incorretos!", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        frame.getContentPane().add(btnLogin);
+
+        Label lblLogin = new Label("Login:", 374, 93, 80, 25);
         frame.getContentPane().add(lblLogin);
 
         loginField = new JTextField();
@@ -65,16 +59,14 @@ public class LoginView {
         frame.getContentPane().add(loginField);
         loginField.setColumns(10);
 
-        JLabel lblSenha = new JLabel("Senha:");
-        lblSenha.setForeground(Color.WHITE);
-        lblSenha.setFont(new Font("Tahoma", Font.BOLD, 15));
-        lblSenha.setBounds(374, 175, 80, 25);
+        Label lblSenha = new Label("Senha:", 374, 175, 80, 25);
         frame.getContentPane().add(lblSenha);
 
         senhaField = new JPasswordField();
         senhaField.setBounds(374, 211, 242, 25);
         frame.getContentPane().add(senhaField);
         
+        // Imagem de fundo
         JLabel lblNewLabel = new JLabel("New label");
         lblNewLabel.setIcon(new ImageIcon(LoginView.class.getResource("../images/TelaLogin.png")));
         lblNewLabel.setBounds(0, 0, 667, 345);
@@ -86,9 +78,5 @@ public class LoginView {
     private void abrirMenuPrincipal() {
         Menu menu = new Menu();
         menu.start();
-    }
-
-    public void start() {
-        frame.setVisible(true);
     }
 }
