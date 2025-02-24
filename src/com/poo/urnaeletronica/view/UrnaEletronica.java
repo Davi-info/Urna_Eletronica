@@ -3,6 +3,8 @@ package com.poo.urnaeletronica.view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,15 +15,11 @@ import javax.swing.border.LineBorder;
 
 public class UrnaEletronica extends JFrame {
 
-	//private JFrame frame;
-	private JTextField textField;
+    private JTextField textField;
 
-	/**
-	 * Create the application.
-	 */
-	public UrnaEletronica() {
-		initialize();
-	}
+    public UrnaEletronica() {
+        initialize();
+    }
 
 	/**
 	 * Initialize the contents of the frame.
