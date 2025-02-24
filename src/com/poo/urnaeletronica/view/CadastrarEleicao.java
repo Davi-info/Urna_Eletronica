@@ -2,23 +2,23 @@ package com.poo.urnaeletronica.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+
+import com.poo.urnaeletronica.components.Botao;
+import com.poo.urnaeletronica.components.CampoDeTexto;
+import com.poo.urnaeletronica.components.Etiqueta;
 
 public class CadastrarEleicao extends JFrame {
 
 	//private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private CampoDeTexto tituloEleicao;
+	private CampoDeTexto dataInicio;
+	private CampoDeTexto dataFim;
+	private CampoDeTexto tipoEleicao;
 
 	/**
 	 * Create the application.
@@ -46,107 +46,59 @@ public class CadastrarEleicao extends JFrame {
 		comboBox.setBounds(570, 166, 404, 34);
 		getContentPane().add(comboBox);
 		
-		JLabel lblListadeEleitores = new JLabel("Lista de Eleitores");
-		lblListadeEleitores.setForeground(Color.WHITE);
-		lblListadeEleitores.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblListadeEleitores.setBounds(570, 211, 161, 40);
+		Etiqueta lblListadeEleitores = new Etiqueta("Lista de Eleitores", 570, 211, 161, 40);
 		getContentPane().add(lblListadeEleitores);
 		
-		JLabel lblListadeCandidatos = new JLabel("Lista de Candidatos");
-		lblListadeCandidatos.setForeground(Color.WHITE);
-		lblListadeCandidatos.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblListadeCandidatos.setBounds(570, 115, 190, 40);
+		Etiqueta lblListadeCandidatos = new Etiqueta("Lista de Candidatos", 570, 115, 190, 40);
 		getContentPane().add(lblListadeCandidatos);
 		
-		JButton btnSair = new JButton("Sair");
-		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnSair.setBounds(825, 444, 94, 34);
+		Botao btnSair = new Botao("Sair", 825, 444, 94, 34, e -> System.exit(0));
 		getContentPane().add(btnSair);
-		btnSair.addActionListener(e -> System.exit(0));
 		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnVoltar.setBounds(629, 444, 102, 34);
+		Botao btnVoltar = new Botao("Voltar", 629, 444, 102, 34, e -> {
+			dispose(); // Fecha a janela atual
+			Menu telaMenu = new Menu(); // Cria uma instância da tela anterior
+			telaMenu.setVisible(false); // Exibe a tela anterior
+		});
 		getContentPane().add(btnVoltar);
 		
-		btnVoltar.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        dispose(); // Fecha a janela atual
-		        Menu telaMenu = new Menu(); // Cria uma instância da tela anterior
-		        telaMenu.setVisible(false); // Exibe a tela anterior
-		    }
+		Botao btnVisualizarEleicao = new Botao("Visualizar", 28, 444, 102, 34, e -> {
+			VisualizarEleicao visualizarEleicao = new VisualizarEleicao(); // Cria a tela de cadastro de cargo
+			visualizarEleicao.setVisible(true); // Torna a tela visível
 		});
-		
-		
-		JButton btnVisualizarEleicao = new JButton("Visualizar");
-		btnVisualizarEleicao.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnVisualizarEleicao.setBounds(28, 444, 102, 34);
 		getContentPane().add(btnVisualizarEleicao);
 
-		btnVisualizarEleicao.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VisualizarEleicao visualizarEleicao = new VisualizarEleicao(); // Cria a tela de cadastro de cargo
-				visualizarEleicao.setVisible(true); // Torna a tela visível
-			}
-		});
-		
-		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnExcluir.setBounds(28, 348, 102, 34);
+		Botao btnExcluir = new Botao("Excluir", 28, 348, 102, 34, e -> {});
 		getContentPane().add(btnExcluir);
 		
-		JButton btnBusca = new JButton("Buscar");
-		btnBusca.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnBusca.setBounds(28, 252, 102, 34);
+		Botao btnBusca = new Botao("Buscar", 28, 252, 102, 34, e -> {});
 		getContentPane().add(btnBusca);
 		
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnSalvar.setBounds(28, 166, 102, 34);
+		Botao btnSalvar = new Botao("Salvar", 28, 166, 102, 34, e -> {});
 		getContentPane().add(btnSalvar);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(173, 444, 364, 34);
-		getContentPane().add(textField_3);
+		tipoEleicao = new CampoDeTexto(10, 173, 444, 364, 34);
+		getContentPane().add(tipoEleicao);
 		
-		JLabel lblTipodeEleição = new JLabel("Tipo de Eleição");
-		lblTipodeEleição.setForeground(Color.WHITE);
-		lblTipodeEleição.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblTipodeEleição.setBounds(173, 393, 161, 40);
+		Etiqueta lblTipodeEleição = new Etiqueta("Tipo de Eleição", 173, 393, 161, 40);
 		getContentPane().add(lblTipodeEleição);
 		
-		JLabel lblDatadoFim = new JLabel("Data do Fim");
-		lblDatadoFim.setForeground(Color.WHITE);
-		lblDatadoFim.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblDatadoFim.setBounds(173, 297, 161, 40);
+		Etiqueta lblDatadoFim = new Etiqueta("Data do Fim", 173, 297, 161, 40);
 		getContentPane().add(lblDatadoFim);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(173, 348, 364, 34);
-		getContentPane().add(textField_2);
+		dataFim = new CampoDeTexto(10, 173, 348, 364, 34);
+		getContentPane().add(dataFim);
 		
-		JLabel lblDatadoInício = new JLabel("Data do Início");
-		lblDatadoInício.setForeground(Color.WHITE);
-		lblDatadoInício.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblDatadoInício.setBounds(173, 211, 161, 40);
+		Etiqueta lblDatadoInício = new Etiqueta("Data do Início", 173, 211, 161, 40);
 		getContentPane().add(lblDatadoInício);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(173, 252, 364, 34);
-		getContentPane().add(textField_1);
+		dataInicio = new CampoDeTexto(10, 173, 252, 364, 34);
+		getContentPane().add(dataInicio);
 		
-		textField = new JTextField();
-		textField.setBounds(173, 166, 364, 34);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		tituloEleicao = new CampoDeTexto(10, 173, 166, 364, 34);
+		getContentPane().add(tituloEleicao);
 		
-		JLabel lblNome = new JLabel("Nome");
-		lblNome.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNome.setForeground(new Color(255, 255, 255));
-		lblNome.setBounds(173, 115, 161, 40);
+		Etiqueta lblNome = new Etiqueta("Nome", 173, 115, 161, 40);
 		getContentPane().add(lblNome);
 		
 		JPanel panel = new JPanel();
