@@ -35,6 +35,11 @@ public class CadastrarEleitor extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("/com/poo/urnaeletronica/view/candidate.jpg")));
+		lblNewLabel_1.setBounds(739, 166, 153, 171);
+		getContentPane().add(lblNewLabel_1);
+		
 		JButton btnSair = new JButton("Sair");
 		btnSair.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnSair.setBounds(443, 444, 94, 34);
@@ -53,12 +58,6 @@ public class CadastrarEleitor extends JFrame {
 		        telaMenu.setVisible(false); // Exibe a tela anterior
 		    }
 		});
-		
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 255, 255));
-		panel_1.setBounds(694, 166, 205, 251);
-		getContentPane().add(panel_1);
 		
 		JButton btnVisualizarEleitor = new JButton("Visualizar");
 		btnVisualizarEleitor.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -131,7 +130,7 @@ public class CadastrarEleitor extends JFrame {
 		panel.add(lblTitulo);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(0, -11, 1009, 558);
+		lblNewLabel.setBounds(0, 0, 1009, 558);
 		lblNewLabel.setIcon(new ImageIcon(CadastrarEleitor.class.getResource("TelaMenu.png")));
 		getContentPane().add(lblNewLabel);
 	}
